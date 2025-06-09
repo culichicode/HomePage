@@ -1,0 +1,365 @@
+/* Variables de color */
+:root {
+    --color-primary-blue: #28c1fa; /* Azul vibrante */
+    --color-dark-blue: #0056b3;   /* Azul oscuro para hover */
+    --color-black: #1a1a1a;       /* Negro casi puro */
+    --color-off-black: #2c2c2c;   /* Negro ligeramente más claro para fondos */
+    --color-white: #ffffff;
+    --color-gray: #cccccc;
+}
+
+/* -------------------- KEYFRAMES DE ANIMACIONES -------------------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulseBorder {
+    0% {
+        border-color: rgba(0, 123, 255, 0.3);
+    }
+    50% {
+        border-color: var(--color-primary-blue);
+    }
+    100% {
+        border-color: rgba(0, 123, 255, 0.3);
+    }
+}
+
+/* -------------------- FIN KEYFRAMES -------------------- */
+
+
+
+
+
+
+/* Estilos Generales */
+body {
+    /* ... el resto de tus estilos generales ... */
+}
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    background-color: var(--color-off-black);
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 3px solid var(--color-primary-blue);
+	animation: fadeIn 1s ease-out forwards; /* Animación de aparición suave */
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 3em;
+    color: var(--color-primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: var(--color-gray);
+	 /* ... estilos existentes ... */
+    animation: fadeInUp 0.8s ease-out forwards; /* Aparece después del logo/título */
+    animation-delay: 0.7s; /* Retraso */
+    opacity: 0; /* Empieza invisible */
+}
+
+/* Secciones Principales */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section:nth-of-type(even) { /* Para secciones alternas */
+    background-color: var(--color-off-black);
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: var(--color-primary-blue);
+}
+
+/* Sección Hero/About */
+.hero {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding-bottom: 40px;
+}
+
+.hero p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    margin-top: 40px;
+}
+
+.feature-item {
+    background-color: var(--color-off-black);
+    padding: 30px;
+    border-radius: 8px;
+    width: calc(33% - 40px); /* Aproximadamente 1/3 del ancho, restando el gap */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 123, 255, 0.3); /* Borde sutil */
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary-blue);
+}
+
+.feature-item h3 {
+    color: var(--color-primary-blue);
+    font-size: 1.6em;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.feature-item .icon {
+    font-size: 1.8em;
+    margin-right: 10px;
+}
+
+.feature-item p {
+    font-size: 1em;
+    color: var(--color-gray);
+}
+
+/* Botón */
+.btn {
+    display: inline-block;
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 40px;
+}
+
+.btn:hover {
+    background-color: var(--color-dark-blue);
+    transform: translateY(-2px);
+}
+
+/* Sección Último Video */
+#latest-video .video-placeholder {
+    background-color: var(--color-off-black);
+    min-height: 350px; /* Altura mínima para el contenedor del video */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Asegura que el iframe no se desborde */
+    margin-top: 30px;
+}
+
+#latest-video .video-placeholder p {
+    color: var(--color-gray);
+    font-style: italic;
+}
+
+#latest-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Pie de página */
+footer {
+    background-color: var(--color-off-black);
+    color: var(--color-gray);
+    padding: 30px 0;
+    text-align: center;
+    border-top: 3px solid var(--color-primary-blue);
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.social-links a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-primary-blue);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 992px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item {
+        width: 80%; /* Más ancho en tablets */
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .feature-item {
+        width: 90%; /* Casi ancho completo en móviles */
+        padding: 20px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    #latest-video .video-placeholder {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .feature-item h3 {
+        font-size: 1.4em;
+    }
+
+    .feature-item .icon {
+        font-size: 1.5em;
+    }
+}
+
+/* Estilos del Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente el logo y el título */
+    margin-bottom: 10px; /* Espacio entre el logo/título y la descripción */
+	 /* ... estilos existentes ... */
+    animation: fadeInUp 0.8s ease-out forwards; /* Aparece después del header */
+    animation-delay: 0.5s; /* Retraso para que el header aparezca primero */
+    opacity: 0; /* Empieza invisible */
+}
+
+.logo-container img {
+    height: 100px; /* Ajusta la altura según el tamaño de tu logo */
+    margin-right: 40px; /* Espacio entre el logo y el título */
+}
+
+header h1 {
+    margin: 0; /* Elimina el margen inferior que tenía antes */
+    font-size: 2.5em; /* Reduce ligeramente el tamaño del título para que se ajuste mejor con el logo */
+    color: var(--color-primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Ajuste en Media Queries si es necesario */
+@media (max-width: 992px) {
+    .logo-container {
+        justify-content: center; /* Asegura que esté centrado en pantallas más pequeñas */
+    }
+
+    .logo-container img {
+        height: 40px; /* Reduce el tamaño del logo en tablets si es necesario */
+        margin-right: 15px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-container img {
+        height: 35px;
+        margin-right: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container img {
+        height: 30px;
+        margin-right: 8px;
+    }
+
+    header h1 {
+        font-size: 1.6em;
+    }
+}
